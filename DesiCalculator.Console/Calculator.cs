@@ -2,35 +2,35 @@ namespace DesiCalculator.Console;
 
 public class Calculator
 {
-    private double heightInCm;
-    private double widthInCm;
-    private double lengthInCm;
+    private double height;
+    private double width;
+    private double length;
     private double volume;
-    private double? weightInKg;
-    private double DESI_FACTOR = 5000;
+    private double weight;
+    private const double DesiFactor = 5000;
     
     public Calculator(double height, double width, double length, double? weight)
     {
-        heightInCm = height;
-        widthInCm = width;
-        lengthInCm = length;
-        weightInKg = weight ?? 0;
+        this.height = height;
+        this.width = width;
+        this.length = length;
+        this.weight = weight ?? 0;
     }
     
-    private double calculateVolume()
+    private double CalculateVolume()
     {
-        volume = heightInCm * widthInCm * lengthInCm;
+        volume = height * width * length;
         return volume;
     }
     
-    public double calculateDesi()
+    public double CalculateDesi()
     {
         if (volume == 0)
         {
-            calculateVolume();
+            CalculateVolume();
         }
         
-        return volume / DESI_FACTOR;
+        return volume / DesiFactor;
     }
  
 }

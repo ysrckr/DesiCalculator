@@ -56,7 +56,7 @@ while (Console.ReadLine() != "exit")
     
     Calculator calculator = new Calculator(double.Parse(height), double.Parse(width), double.Parse(length), double.Parse(weight));
     
-    double desi = calculator.calculateDesi();
+    double desi = calculator.CalculateDesi();
     
     Console.WriteLine($"Your desi is: {desi}");
     
